@@ -1,7 +1,35 @@
-/* Custom CSS transitions for smooth micro-interactions */
+
+
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   AUTH / PROTECTED PAGE LOADING
+   ========================================= */
+
+.auth-loading {
+  visibility: hidden;
+}
+
+.auth-ready {
+  visibility: visible;
+}
+
+/* =========================================
+   FORM TRANSITIONS
+   ========================================= */
+
 .form-transition {
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-hidden {
@@ -18,14 +46,200 @@
   position: relative;
   width: 100%;
 }
-/* Optimized container utility for precise form wrapping */
+
+/* =========================================
+   AUTH FORM CONTAINER
+   ========================================= */
+
 #form-container {
   will-change: height;
 }
-.auth-loading {
+
+/* =========================================
+   SMOOTH INTERACTION HELPERS
+   ========================================= */
+
+.interactive {
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease;
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+}
+
+.interactive:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* =========================================
+   IMAGE / MEDIA
+   ========================================= */
+
+.image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-hover {
+  overflow: hidden;
+}
+
+.image-hover img {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.image-hover:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   CUSTOM SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f8f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Firefox */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f7f8f5;
+}
+
+/* =========================================
+   FOCUS ACCESSIBILITY
+   ========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(20, 184, 166, 0.25);
+  outline-offset: 2px;
+}
+
+/* =========================================
+   GSAP / ANIMATION HELPERS
+   ========================================= */
+
+.gsap-hidden {
   visibility: hidden;
 }
 
-.auth-ready {
-  visibility: visible;
+.gsap-reveal {
+  opacity: 0;
+  transform: translateY(30px);
 }
+
+.gsap-fade {
+  opacity: 0;
+}
+
+.gsap-scale {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================
+   HERO TRUST INDICATORS
+   ========================================= */
+
+.hero-trust {
+  position: relative;
+  width: 100%;
+  clear: both;
+}
+
+.trust-item {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.trust-item span:last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Tablet */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-trust {
+    max-width: 620px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+  .hero-trust {
+    max-width: 100%;
+  }
+
+  .trust-item {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   MOBILE REFINEMENTS
+   ========================================= */
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+

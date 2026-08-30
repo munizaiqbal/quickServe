@@ -1,0 +1,236 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>QuickServe — Book Service</title>
+
+    <link rel="stylesheet" href="../css/output.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body class="min-h-screen bg-background text-primary">
+
+    <header class="border-b border-border bg-surface">
+      <div class="container-custom flex min-h-16 items-center justify-between">
+        <a
+          href="../index.html"
+          class="text-xl font-bold tracking-tight text-primary"
+        >
+          Quick<span class="text-accent">Serve</span>
+        </a>
+
+        <a
+          href="javascript:history.back()"
+          class="btn btn-secondary text-sm"
+        >
+          ← Back
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container-custom">
+
+          <div class="mx-auto max-w-2xl">
+
+            <div class="mb-8">
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                QuickServe booking
+              </p>
+
+              <h1 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                Book a Service
+              </h1>
+
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Tell us what you need and choose a convenient date and time.
+              </p>
+            </div>
+
+            <div
+              id="booking-provider"
+              class="mb-6 hidden rounded-3xl border border-border bg-surface p-5"
+            >
+              <p class="text-xs text-muted">
+                Booking with
+              </p>
+
+              <h2
+                id="booking-provider-name"
+                class="mt-1 text-lg font-bold"
+              ></h2>
+
+              <p
+                id="booking-provider-category"
+                class="mt-1 text-sm text-muted"
+              ></p>
+            </div>
+
+            <form
+              id="booking-form"
+              class="space-y-5 rounded-3xl border border-border bg-surface p-6 shadow-sm sm:p-8"
+            >
+
+              <div>
+                <label
+                  for="customer-name"
+                  class="mb-2 block text-sm font-semibold"
+                >
+                  Your Name
+                </label>
+
+                <input
+                  id="customer-name"
+                  name="customerName"
+                  type="text"
+                  required
+                  minlength="2"
+                  class="input w-full"
+                  placeholder="Enter your name"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="customer-phone"
+                  class="mb-2 block text-sm font-semibold"
+                >
+                  Phone Number
+                </label>
+
+                <input
+                  id="customer-phone"
+                  name="customerPhone"
+                  type="tel"
+                  required
+                  class="input w-full"
+                  placeholder="+92 300 1234567"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="service-address"
+                  class="mb-2 block text-sm font-semibold"
+                >
+                  Service Address
+                </label>
+
+                <textarea
+                  id="service-address"
+                  name="serviceAddress"
+                  required
+                  rows="3"
+                  class="input w-full"
+                  placeholder="Enter the address where the service is required"
+                ></textarea>
+              </div>
+
+              <div class="grid gap-5 sm:grid-cols-2">
+
+                <div>
+                  <label
+                    for="booking-date"
+                    class="mb-2 block text-sm font-semibold"
+                  >
+                    Date
+                  </label>
+
+                  <input
+                    id="booking-date"
+                    name="date"
+                    type="date"
+                    required
+                    class="input w-full"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="booking-time"
+                    class="mb-2 block text-sm font-semibold"
+                  >
+                    Preferred Time
+                  </label>
+
+                  <input
+                    id="booking-time"
+                    name="time"
+                    type="time"
+                    required
+                    class="input w-full"
+                  />
+                </div>
+
+              </div>
+
+              <div>
+                <label
+                  for="booking-notes"
+                  class="mb-2 block text-sm font-semibold"
+                >
+                  Additional Details
+                </label>
+
+                <textarea
+                  id="booking-notes"
+                  name="notes"
+                  rows="4"
+                  class="input w-full"
+                  placeholder="Describe the work you need..."
+                ></textarea>
+              </div>
+
+              <button
+                id="booking-submit"
+                type="submit"
+                class="btn btn-primary min-h-12 w-full"
+              >
+                Confirm Booking
+              </button>
+
+              <div
+                id="booking-error"
+                class="hidden rounded-2xl bg-red-50 p-4 text-sm text-red-600"
+              ></div>
+
+              <div
+                id="booking-success"
+                class="hidden rounded-2xl bg-success-soft p-5 text-center"
+              >
+                <div class="text-3xl">✓</div>
+
+                <h2 class="mt-2 font-bold text-success">
+                  Booking Submitted
+                </h2>
+
+                <p class="mt-1 text-sm text-muted">
+                  Your booking request has been saved successfully.
+                </p>
+
+                <a
+                  id="success-provider-link"
+                  href="#"
+                  class="btn btn-secondary mt-4"
+                >
+                  Back to Provider
+                </a>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="../js/booking.js"></script>
+
+  </body>
+</html>
+

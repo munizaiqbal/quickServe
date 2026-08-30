@@ -2,18 +2,1550 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>document</title>
+
+    <meta
+      name="description"
+      content="QuickServe connects you with trusted local service providers and makes booking simple."
+    />
+
+    <title>QuickServe — Services, Simplified</title>
+
+    <!-- Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind -->
     <link rel="stylesheet" href="./css/output.css" />
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
-  <body>
-    <h1>hello</h1>
+  <body class="bg-background text-text">
+    <!-- =========================================
+         NAVBAR
+         ========================================= -->
 
-    <!-- GSAP CDN -->
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur-xl"
+    >
+      <nav class="container-custom flex h-18 items-center justify-between">
+        <!-- Logo -->
+        <a
+          href="./index.html"
+          class="group flex items-center gap-2.5"
+          aria-label="QuickServe Home"
+        >
+          <span
+            class="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-sm font-bold text-white shadow-sm transition-transform duration-300 group-hover:scale-105"
+          >
+            Q
+          </span>
+
+          <span class="text-lg font-bold tracking-tight text-primary">
+            Quick<span class="text-accent">Serve</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden items-center gap-8 md:flex">
+          <a
+            href="#services"
+            class="nav-link text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-primary"
+          >
+            Services
+          </a>
+
+          <a
+            href="#how-it-works"
+            class="nav-link text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-primary"
+          >
+            How It Works
+          </a>
+
+          <a
+            href="#why-quickserve"
+            class="nav-link text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-primary"
+          >
+            Why QuickServe
+          </a>
+        </div>
+
+        <!-- Desktop Actions -->
+        <div class="hidden items-center gap-3 md:flex">
+          <a href="./pages/login.html" class="btn btn-ghost text-sm">
+            Sign In
+          </a>
+
+          <a href="./pages/login.html" class="btn btn-primary text-sm">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="icon-btn md:hidden"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          <svg
+            id="menu-open-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="h-5 w-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+
+          <svg
+            id="menu-close-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="hidden h-5 w-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile Navigation -->
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-border bg-surface md:hidden"
+      >
+        <div class="container-custom flex flex-col gap-1 py-4">
+          <a
+            href="#services"
+            class="mobile-nav-link rounded-xl px-4 py-3 text-sm font-medium text-text-secondary hover:bg-surface-soft hover:text-primary"
+          >
+            Services
+          </a>
+
+          <a
+            href="#how-it-works"
+            class="mobile-nav-link rounded-xl px-4 py-3 text-sm font-medium text-text-secondary hover:bg-surface-soft hover:text-primary"
+          >
+            How It Works
+          </a>
+
+          <a
+            href="#why-quickserve"
+            class="mobile-nav-link rounded-xl px-4 py-3 text-sm font-medium text-text-secondary hover:bg-surface-soft hover:text-primary"
+          >
+            Why QuickServe
+          </a>
+
+          <div class="my-2 h-px bg-border"></div>
+
+          <a href="./pages/login.html" class="btn btn-secondary w-full">
+            Sign In
+          </a>
+
+          <a href="./pages/login.html" class="btn btn-primary mt-2 w-full">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==============HERO===========================-->
+      <section
+        id="hero"
+        class="relative min-h-screen overflow-hidden pt-10 sm:pt-15"
+      >
+        <!-- Decorative Background -->
+        <div
+          class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl"
+        ></div>
+
+        <div
+          class="pointer-events-none absolute -left-40 top-1/2 h-80 w-80 rounded-full bg-primary/5 blur-3xl"
+        ></div>
+
+        <div
+          class="container-custom relative flex min-h-[calc(100vh-7rem)] items-center py-16 lg:py-20"
+        >
+          <div
+            class="grid w-full items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20"
+          >
+            <!-- Hero Content -->
+            <div class="hero-content max-w-2xl">
+              <!-- Eyebrow -->
+              <div
+                class="hero-eyebrow mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent-soft px-3.5 py-2 text-xs font-semibold text-accent-hover"
+              >
+                <span class="status-dot status-online"></span>
+
+                Your services. One simple place.
+              </div>
+
+              <!-- Heading -->
+              <h1
+                class="hero-title text-balance text-4xl font-bold leading-[1.08] tracking-tight text-primary sm:text-5xl lg:text-6xl xl:text-7xl"
+              >
+                Find trusted services.
+                <span class="text-accent"> Book with confidence. </span>
+              </h1>
+
+              <!-- Description -->
+              <p
+                class="hero-description mt-6 max-w-xl text-sm leading-7 text-muted sm:text-base sm:leading-8"
+              >
+                QuickServe makes it easy to discover reliable local
+                professionals, compare your options, and book the service you
+                need — without the hassle.
+              </p>
+
+              <!-- CTA -->
+              <div class="hero-actions mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="./pages/login.html"
+                  class="btn btn-primary min-h-12 px-6 text-sm"
+                >
+                  Find a Service
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="h-4 w-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="#how-it-works"
+                  class="btn btn-secondary min-h-12 px-6 text-sm"
+                >
+                  How It Works
+                </a>
+              </div>
+
+              <!-- Trust Indicators -->
+              <!-- Trust Indicators -->
+              <div
+                class="hero-trust mt-10 grid w-full grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4"
+              >
+                <!-- Customer Rating -->
+                <div
+                  class="trust-item flex min-h-10 items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-xs text-muted shadow-sm"
+                >
+                  <span
+                    class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-50 text-amber-500"
+                  >
+                    ★
+                  </span>
+                  <span class="whitespace-nowrap">4.9 Customer Rating</span>
+                </div>
+
+                <!-- Verified Provider -->
+                <div
+                  class="trust-item flex min-h-10 items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-xs text-muted shadow-sm"
+                >
+                  <span
+                    class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-success-soft text-success"
+                  >
+                    ✓
+                  </span>
+                  <span class="whitespace-nowrap">Verified Provider</span>
+                </div>
+
+                <!-- Easy Booking -->
+                <div
+                  class="trust-item flex min-h-10 items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-xs text-muted shadow-sm"
+                >
+                  <span
+                    class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-success-soft text-success"
+                  >
+                    ✓
+                  </span>
+                  <span class="whitespace-nowrap">Easy booking</span>
+                </div>
+
+                <!-- Transparent Choices -->
+                <div
+                  class="trust-item flex min-h-10 items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2 text-xs text-muted shadow-sm"
+                >
+                  <span
+                    class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-success-soft text-success"
+                  >
+                    ✓
+                  </span>
+                  <span class="whitespace-nowrap">Transparent choices</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="hero-visual relative mx-auto w-full max-w-xl">
+              <!-- Main visual card -->
+              <div
+                class="hero-card relative overflow-hidden rounded-[2rem] border border-border bg-surface p-5 shadow-elevated sm:p-7"
+              >
+                <!-- Top bar -->
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-xs font-medium text-muted">QuickServe</p>
+
+                    <h2 class="mt-1 text-lg font-semibold text-primary">
+                      What do you need?
+                    </h2>
+                  </div>
+
+                  <div
+                    class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-soft text-accent"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.8"
+                      stroke="currentColor"
+                      class="h-5 w-5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m21 21-4.35-4.35m2.1-5.4a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Search -->
+                <div
+                  class="mt-6 flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.8"
+                    stroke="currentColor"
+                    class="h-4 w-4 text-muted"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m21 21-4.35-4.35m2.1-5.4a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"
+                    />
+                  </svg>
+
+                  <span class="text-xs text-placeholder">
+                    Search for a service...
+                  </span>
+                </div>
+
+                <!-- Service Categories -->
+                <div class="mt-6">
+                  <div class="flex items-center justify-between">
+                    <p class="text-xs font-semibold text-primary">
+                      Popular services
+                    </p>
+
+                    <span class="text-[11px] text-muted"> Explore all </span>
+                  </div>
+
+                  <div class="mt-3 grid grid-cols-2 gap-3">
+                    <div
+                      class="hero-service-card group rounded-xl border border-border bg-background p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-soft"
+                    >
+                      <div
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-soft text-accent"
+                      >
+                        <span class="text-sm">✦</span>
+                      </div>
+
+                      <p class="mt-3 text-xs font-semibold text-primary">
+                        Home Cleaning
+                      </p>
+
+                      <p class="mt-1 text-[10px] text-muted">From $25</p>
+                    </div>
+
+                    <div
+                      class="hero-service-card group rounded-xl border border-border bg-background p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-soft"
+                    >
+                      <div
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-white"
+                      >
+                        <span class="text-sm">⌁</span>
+                      </div>
+
+                      <p class="mt-3 text-xs font-semibold text-primary">
+                        Plumbing
+                      </p>
+
+                      <p class="mt-1 text-[10px] text-muted">From $35</p>
+                    </div>
+
+                    <div
+                      class="hero-service-card group rounded-xl border border-border bg-background p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-soft"
+                    >
+                      <div
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-warning-soft text-amber-700"
+                      >
+                        <span class="text-sm">★</span>
+                      </div>
+
+                      <p class="mt-3 text-xs font-semibold text-primary">
+                        Beauty & Care
+                      </p>
+
+                      <p class="mt-1 text-[10px] text-muted">From $20</p>
+                    </div>
+
+                    <div
+                      class="hero-service-card group rounded-xl border border-border bg-background p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-soft"
+                    >
+                      <div
+                        class="flex h-9 w-9 items-center justify-center rounded-lg bg-info-soft text-info"
+                      >
+                        <span class="text-sm">+</span>
+                      </div>
+
+                      <p class="mt-3 text-xs font-semibold text-primary">
+                        Electrical
+                      </p>
+
+                      <p class="mt-1 text-[10px] text-muted">From $30</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Booking preview -->
+                <div
+                  class="mt-5 flex items-center justify-between rounded-xl bg-primary p-4 text-white"
+                >
+                  <div>
+                    <p class="text-[10px] text-white/60">Next available</p>
+
+                    <p class="mt-1 text-xs font-semibold">Today · 4:30 PM</p>
+                  </div>
+
+                  <span
+                    class="rounded-lg bg-white/10 px-3 py-2 text-[10px] font-semibold"
+                  >
+                    Book now
+                  </span>
+                </div>
+              </div>
+
+              <!-- Floating rating card -->
+              <div
+                class="hero-floating-card absolute -left-14 -top-4 hidden rounded-2xl border border-border bg-surface p-4 shadow-elevated sm:block lg:-left-6"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="flex h-9 w-9 items-center justify-center rounded-full bg-warning-soft text-sm text-amber-700"
+                  >
+                    ★
+                  </div>
+
+                  <div>
+                    <p class="text-xs font-bold text-primary">4.9 / 5</p>
+
+                    <p class="text-[10px] text-muted">Customer rating</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating provider card -->
+              <div
+                class="hero-floating-card absolute -bottom-12 right-3 hidden rounded-2xl border border-border bg-surface p-4 shadow-elevated sm:block lg:-right-6"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="relative flex h-10 w-10 items-center justify-center rounded-full bg-accent-soft text-sm font-bold text-accent-hover"
+                  >
+                    JS
+
+                    <span
+                      class="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white bg-success"
+                    ></span>
+                  </div>
+
+                  <div>
+                    <p class="text-xs font-semibold text-primary">
+                      Verified Provider
+                    </p>
+
+                    <p class="mt-1 text-[10px] text-success">Available now</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== SERVICES===========================-->
+
+      <section
+        id="services"
+        class="section relative overflow-hidden bg-surface py-10 sm:py-15"
+      >
+        <div class="container-custom">
+          <!-- Section Header -->
+          <div class="services-header mx-auto max-w-2xl text-center">
+            <span
+              class="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-xs font-semibold text-accent shadow-sm"
+            >
+              <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+              Explore services
+            </span>
+
+            <h2
+              class="text-balance text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl"
+            >
+              Whatever you need,
+              <span class="text-accent">we've got you covered.</span>
+            </h2>
+
+            <p
+              class="mt-5 text-sm leading-7 text-muted sm:text-base sm:leading-8"
+            >
+              Find trusted local professionals for everyday tasks, home
+              services, repairs, and more — all in one place.
+            </p>
+          </div>
+
+          <!-- Service Grid -->
+          <div
+            class="services-grid mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 xl:grid-cols-4"
+          >
+            <!-- Cleaning -->
+            <a
+            href="./pages/providers.html"
+            data-category="cleaning"
+              class="service-card group relative overflow-hidden rounded-3xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-2 hover:border-accent/30 hover:shadow-elevated"
+            >
+              <div
+                class="service-icon mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-accent transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <!-- Cleaning icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 3h6m-5 0v4m4-4v4m-7 4h10m-9 0v8a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-8M8 7h8"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">Cleaning</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Home, office, deep cleaning and more.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-accent"
+              >
+                Explore
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </a>
+
+            <!-- Plumbing -->
+            <a
+            href="./pages/providers.html"
+            data-category="plumbing"
+              class="service-card group relative overflow-hidden rounded-3xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-elevated"
+            >
+              <div
+                class="service-icon mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-accent transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <!-- Plumbing icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 4v7a6 6 0 0 0 12 0V8m-3-4v4m-6-4v4m-6 8h6m6 0h3"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">Plumbing</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Repairs, leaks, installations and maintenance.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-accent"
+              >
+                Explore
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </a>
+
+            <!-- Electrical -->
+            <a
+            href="./pages/providers.html"
+            data-category="electrical"
+              class="service-card group relative overflow-hidden rounded-3xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-2 hover:border-warning/30 hover:shadow-elevated"
+            >
+              <div
+                class="service-icon mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-accent transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <!-- Lightning icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">Electrical</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Electricians for repairs, wiring and installations.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-accent"
+              >
+                Explore
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </a>
+
+            <!-- AC & Appliances -->
+            <a
+            href="./pages/providers.html"
+            data-category="ac-appliances"
+              class="service-card group relative overflow-hidden rounded-3xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-2 hover:border-accent/30 hover:shadow-elevated"
+            >
+              <div
+                class="service-icon mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-accent transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <!-- Home icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 11.5 12 4l9 7.5M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9M9 20v-5h6v5"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">AC & Appliances</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Installation, servicing and appliance repairs.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-accent"
+              >
+                Explore
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </a>
+
+            <!-- Painting -->
+            <a
+            href="./pages/providers.html"
+            data-category="painting"
+              class="service-card group relative overflow-hidden rounded-3xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-elevated"
+            >
+              <div
+                class="service-icon mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-accent transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 7h16M7 4v3m10-3v3M6 11h12v9H6z"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">Painting</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Interior, exterior and professional finishing.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-accent"
+              >
+                Explore
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </a>
+
+            <!-- Moving -->
+            <a
+            href="./pages/providers.html"
+              data-category="moving"
+              class="service-card group relative overflow-hidden rounded-3xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-2 hover:border-accent/30 hover:shadow-elevated"
+            >
+              <div
+                class="service-icon mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-accent transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 7h11v10H3zM14 10h4l3 3v4h-7zM7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm11 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">Moving</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Reliable help for moving homes, offices and belongings.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-accent"
+              >
+                Explore
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </a>
+
+            <!-- Beauty -->
+            <a
+            href="./pages/providers.html"
+            data-category="beauty"
+              class="service-card group relative overflow-hidden rounded-3xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-2 hover:border-warning/30 hover:shadow-elevated"
+            >
+              <div
+                class="service-icon mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-accent transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3c3 3 6 5.5 6 9a6 6 0 1 1-12 0c0-3.5 3-6 6-9Zm0 6v9"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">Beauty & Wellness</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Beauty, grooming and wellness professionals.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-accent"
+              >
+                Explore
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </a>
+
+            <!-- More Services -->
+            <a
+            href="./pages/providers.html"
+              class="service-card group relative overflow-hidden rounded-3xl border border-dashed border-border bg-background p-6 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:bg-accent-soft/30"
+            >
+              <div
+                class="service-icon mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-accent transition-all duration-300 group-hover:scale-110"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 5v14m-7-7h14"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">More Services</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Discover even more professionals near you.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-1.5 text-xs font-semibold text-accent"
+              >
+                View all
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </a>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div
+            class="services-cta mt-12 flex flex-col items-center justify-between gap-5 rounded-3xl border border-border bg-background p-6 sm:flex-row sm:p-7 lg:mt-16"
+          >
+            <div>
+              <p class="text-sm font-bold text-primary sm:text-base">
+                Can't find what you're looking for?
+              </p>
+
+              <p class="mt-1 text-xs text-muted sm:text-sm">
+                We're constantly adding new services and professionals.
+              </p>
+            </div>
+
+            <a
+            href="./pages/providers.html"
+              class="btn btn-primary min-h-11 shrink-0 px-5 text-sm"
+            >
+              Browse all services
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="h-4 w-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================how it works section========================= -->
+
+      <section
+        id="how-it-works"
+        class="section relative overflow-hidden bg-background py-10 sm:py-15"
+      >
+        <div class="container-custom">
+          <!-- Section Header -->
+          <div class="how-header mx-auto max-w-2xl text-center">
+            <span
+              class="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-semibold text-accent shadow-sm"
+            >
+              <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+              Simple by design
+            </span>
+
+            <h2
+              class="text-balance text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl"
+            >
+              Getting the right service
+              <span class="text-accent">shouldn't be complicated.</span>
+            </h2>
+
+            <p
+              class="mt-5 text-sm leading-7 text-muted sm:text-base sm:leading-8"
+            >
+              From finding a trusted professional to getting the job done,
+              QuickServe keeps the entire process simple.
+            </p>
+          </div>
+
+          <!-- Steps -->
+          <div
+            class="how-steps relative mt-14 grid gap-5 md:grid-cols-3 lg:mt-20"
+          >
+            <!-- Connecting Line -->
+            <div
+              class="absolute left-[16.66%] right-[16.66%] top-12 hidden h-px bg-border md:block"
+            ></div>
+
+            <!-- Step 01 -->
+            <article
+              class="how-card group relative rounded-3xl border border-border bg-surface p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-elevated sm:p-8"
+            >
+              <!-- Number -->
+              <div
+                class="relative z-10 mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-white shadow-lg shadow-primary/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                01
+              </div>
+
+              <div
+                class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent transition-transform duration-300 group-hover:scale-110"
+              >
+                <!-- Search Icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-4.35-4.35m2.1-5.4a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">Find a service</h3>
+
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Browse local professionals and discover the service that fits
+                your needs.
+              </p>
+
+              <div
+                class="mt-6 flex items-center gap-2 text-xs font-semibold text-accent"
+              >
+                Explore providers
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </article>
+
+            <!-- Step 02 -->
+            <article
+              class="how-card group relative rounded-3xl border border-border bg-surface p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-elevated sm:p-8"
+            >
+              <div
+                class="relative z-10 mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-white shadow-lg shadow-accent/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                02
+              </div>
+
+              <div
+                class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl text-accent bg-accent-soft transition-transform duration-300 group-hover:scale-110"
+              >
+                <!-- Calendar Icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8 2v4m8-4v4M3.5 9.5h17M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">Compare & book</h3>
+
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Compare your options, check availability, and choose the
+                provider that works best for you.
+              </p>
+
+              <div
+                class="mt-6 flex items-center gap-2 text-xs font-semibold text-accent"
+              >
+                Book with confidence
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </article>
+
+            <!-- Step 03 -->
+            <article
+              class="how-card group relative rounded-3xl border border-border bg-surface p-7 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-elevated sm:p-8"
+            >
+              <div
+                class="relative z-10 mb-7 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-lg font-bold text-white shadow-lg shadow-success/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
+              >
+                03
+              </div>
+
+              <div
+                class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-success-soft text-success transition-transform duration-300 group-hover:scale-110"
+              >
+                <!-- Check Icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m5 12 4.5 4.5L19 7"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-lg font-bold text-primary">Get it done</h3>
+
+              <p class="mt-3 text-sm leading-7 text-muted">
+                Connect with your chosen professional and get your service
+                completed without the hassle.
+              </p>
+
+              <div
+                class="mt-6 flex items-center gap-2 text-xs font-semibold text-accent"
+              >
+                Enjoy the result
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 12h14m-5-5 5 5-5 5"
+                  />
+                </svg>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============WHY QUICKSERVE===========================-->
+      <section id="why-quickserve" class="section bg-background">
+        <div class="container-custom">
+          <!-- Section Header -->
+          <div class="why-header max-w-2xl">
+            <span
+              class="section-eyebrow inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-semibold text-accent"
+            >
+              <span class="status-dot status-online"></span>
+              Why QuickServe
+            </span>
+
+            <h2 class="section-title mt-4 text-balance">
+              Built to make finding a service
+              <span class="text-accent">simple.</span>
+            </h2>
+
+            <p class="section-subtitle mt-4">
+              From discovering the right professional to booking with
+              confidence, QuickServe removes the friction from everyday service
+              needs.
+            </p>
+          </div>
+
+          <!-- Feature Grid -->
+          <div
+            class="why-grid mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4"
+          >
+            <!-- Card 1 -->
+            <article
+              class="why-card interactive group rounded-3xl border border-border bg-surface p-6 shadow-sm"
+            >
+              <div
+                class="why-icon flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-soft text-accent"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="mt-6 text-lg font-bold text-primary">
+                Trusted Providers
+              </h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Discover reliable professionals with verified profiles and
+                transparent service information.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-2 text-xs font-semibold text-accent"
+              >
+                <span>Verified & reliable</span>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article
+              class="why-card interactive group rounded-3xl border border-border bg-surface p-6 shadow-sm"
+            >
+              <div
+                class="why-icon flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-soft text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v6l4 2m5-2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="mt-6 text-lg font-bold text-primary">Fast Booking</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Find the service you need and move from search to booking
+                without unnecessary steps.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-2 text-xs font-semibold text-primary"
+              >
+                <span>Less waiting</span>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article
+              class="why-card interactive group rounded-3xl border border-border bg-surface p-6 shadow-sm"
+            >
+              <div
+                class="why-icon flex h-12 w-12 items-center justify-center rounded-2xl bg-warning-soft text-amber-700"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v18m9-9H3"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M7.5 7.5h9M7.5 16.5h9"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="mt-6 text-lg font-bold text-primary">
+                Transparent Choices
+              </h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                Compare your options clearly so you can choose the provider that
+                fits your needs and budget.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-2 text-xs font-semibold text-amber-700"
+              >
+                <span>Choose confidently</span>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article
+              class="why-card interactive group rounded-3xl border border-border bg-surface p-6 shadow-sm"
+            >
+              <div
+                class="why-icon flex h-12 w-12 items-center justify-center rounded-2xl bg-success-soft text-success"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 12.75 11.25 15 15 9.75"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M20.25 12c0 4.556-3.472 7.5-8.25 9-4.778-1.5-8.25-4.444-8.25-9V6.75L12 3l8.25 3.75V12Z"
+                  />
+                </svg>
+              </div>
+
+              <h3 class="mt-6 text-lg font-bold text-primary">Peace of Mind</h3>
+
+              <p class="mt-2 text-sm leading-6 text-muted">
+                A cleaner, safer experience designed to help you book services
+                without second-guessing your decision.
+              </p>
+
+              <div
+                class="mt-5 flex items-center gap-2 text-xs font-semibold text-success"
+              >
+                <span>Book with confidence</span>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  class="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </div>
+            </article>
+          </div>
+
+          <!-- Bottom Trust Statement -->
+          <div
+            class="why-bottom mt-10 flex flex-col gap-4 rounded-3xl border border-border bg-surface p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-accent-soft text-accent"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="h-5 w-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3 4.5 6.5v5.25c0 4.35 3.15 7.75 7.5 9.25 4.35-1.5 7.5-4.9 7.5-9.25V6.5L12 3Z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m9 12 2 2 4-4"
+                  />
+                </svg>
+              </div>
+
+              <div>
+                <p class="text-sm font-bold text-primary">
+                  Your service search, simplified.
+                </p>
+
+                <p class="mt-1 text-xs text-muted">Discover. Compare. Book.</p>
+              </div>
+            </div>
+
+            <a
+              href="./pages/login.html"
+              class="btn btn-primary min-h-11 px-5 text-xs"
+            >
+              Get Started
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="h-4 w-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- GSAP -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <!-- <script type="module" src="./js/seed-providers.js"></script> -->
+
+    <!-- Application JS -->
     <script type="module" src="./js/script.js"></script>
+    <!-- Service functionality -->
+    <script
+      type="module"
+      src="./js/services.js"
+    ></script>
+ 
   </body>
 </html>

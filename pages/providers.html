@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>QuickServe — Service Providers</title>
+
+    <link rel="stylesheet" href="../css/output.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body class="min-h-screen bg-background text-primary">
+
+    <!-- HEADER -->
+    <header class="border-b border-border bg-surface">
+      <div
+        class="container-custom flex min-h-16 items-center justify-between"
+      >
+        <a
+          href="../index.html"
+          class="text-xl font-bold tracking-tight text-primary"
+        >
+          Quick<span class="text-accent">Serve</span>
+        </a>
+
+        <a
+          href="../index.html#services"
+          class="btn btn-secondary text-sm"
+        >
+          ← Services
+        </a>
+      </div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- PAGE INTRO -->
+      <section class="section">
+        <div class="container-custom">
+
+          <div class="max-w-2xl">
+
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.2em] text-accent"
+            >
+              QuickServe providers
+            </p>
+
+            <h1
+              id="category-title"
+              class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+            >
+              Service Providers
+            </h1>
+
+            <p
+              id="category-description"
+              class="mt-4 text-sm leading-7 text-muted sm:text-base"
+            >
+              Find trusted professionals for your service needs.
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- PROVIDERS -->
+      <section class="pb-20">
+
+        <div class="container-custom">
+
+          <!-- Loading -->
+          <div
+            id="providers-loading"
+            class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          >
+
+            <div class="h-72 animate-pulse rounded-3xl bg-slate-200"></div>
+
+            <div class="h-72 animate-pulse rounded-3xl bg-slate-200"></div>
+
+            <div class="h-72 animate-pulse rounded-3xl bg-slate-200"></div>
+
+          </div>
+
+
+          <!-- Provider Grid -->
+          <div
+            id="providers-grid"
+            class="hidden grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          >
+          </div>
+
+
+          <!-- Empty State -->
+          <div
+            id="providers-empty"
+            class="hidden rounded-3xl border border-border bg-surface p-10 text-center"
+          >
+
+            <div
+              class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-accent-soft text-2xl"
+            >
+              🔍
+            </div>
+
+            <h2 class="mt-5 text-xl font-bold text-primary">
+              No providers found
+            </h2>
+
+            <p class="mx-auto mt-2 max-w-md text-sm leading-6 text-muted">
+              We couldn't find any providers for this service yet.
+              Please check another category.
+            </p>
+
+            <a
+              href="../index.html#services"
+              class="btn btn-primary mt-6"
+            >
+              Browse Services
+            </a>
+
+          </div>
+
+
+          <!-- Error State -->
+          <div
+            id="providers-error"
+            class="hidden rounded-3xl border border-red-200 bg-red-50 p-8 text-center"
+          >
+
+            <h2 class="text-lg font-bold text-red-700">
+              Unable to load providers
+            </h2>
+
+            <p
+              id="providers-error-message"
+              class="mt-2 text-sm text-red-600"
+            >
+              Something went wrong.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- Firebase / Providers -->
+    <script type="module" src="../js/providers.js"></script>
+
+  </body>
+</html>

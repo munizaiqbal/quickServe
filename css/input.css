@@ -1,63 +1,351 @@
+
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2563eb;
-  --color-primary-hover: #1d4ed8;
+  /* =========================
+     QUICKServe BRAND COLORS
+     ========================= */
 
-  --color-secondary: #f1f5f9;
+  --color-primary: #0b132b;
+  --color-primary-soft: #16213e;
+  --color-primary-light: #24345c;
+
+  --color-accent: #14b8a6;
+  --color-accent-hover: #0d9488;
+  --color-accent-soft: #ccfbf1;
+
+  --color-highlight: #f4b942;
+
+  /* =========================
+     SEMANTIC COLORS
+     ========================= */
 
   --color-success: #16a34a;
+  --color-success-soft: #dcfce7;
+
   --color-danger: #dc2626;
+  --color-danger-soft: #fee2e2;
+
   --color-warning: #f59e0b;
+  --color-warning-soft: #fef3c7;
 
-  --color-dark: #0f172a;
-  --color-text: #334155;
-  --color-muted: #64748b;
+  --color-info: #2563eb;
+  --color-info-soft: #dbeafe;
 
-  --color-background: #f8fafc;
+  /* =========================
+     BACKGROUNDS
+     ========================= */
+
+  --color-background: #f7f8f5;
   --color-surface: #ffffff;
-  --color-border: #e2e8f0;
+  --color-surface-soft: #f1f5f4;
+
+  /* =========================
+     TEXT
+     ========================= */
+
+  --color-text: #111827;
+  --color-text-secondary: #475467;
+  --color-muted: #667085;
+  --color-placeholder: #98a2b3;
+
+  /* =========================
+     BORDERS
+     ========================= */
+
+  --color-border: #e4e7ec;
+  --color-border-dark: #d0d5dd;
+
+  /* =========================
+     RADIUS
+     ========================= */
 
   --radius-btn: 0.75rem;
-  --radius-card: 1rem;
   --radius-input: 0.625rem;
+  --radius-card: 1rem;
+  --radius-card-lg: 1.25rem;
+  --radius-modal: 1.25rem;
+
+  /* =========================
+     SHADOWS
+     ========================= */
+
+  --shadow-card:
+    0 1px 3px rgba(16, 24, 40, 0.06),
+    0 1px 2px rgba(16, 24, 40, 0.03);
+
+  --shadow-card-hover:
+    0 12px 30px rgba(16, 24, 40, 0.09);
+
+  --shadow-soft:
+    0 4px 16px rgba(16, 24, 40, 0.06);
+
+  --shadow-elevated:
+    0 20px 45px rgba(16, 24, 40, 0.12);
 }
 
+/* =========================
+   BASE
+   ========================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text antialiased;
+    font-family: "Poppins", sans-serif;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+/* =========================
+   REUSABLE COMPONENTS
+   ========================= */
+
 @layer components {
+
+  /* ---------- Container ---------- */
+
   .container-custom {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
+  /* ---------- Buttons ---------- */
+
   .btn {
     @apply inline-flex items-center justify-center gap-2
-      px-4 py-2.5 font-medium
-      transition duration-200
-      cursor-pointer;
+      px-4 py-2.5
+      font-medium
+      transition-all duration-200
+      cursor-pointer
+      select-none;
+    border-radius: var(--radius-btn);
   }
 
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary-hover;
-    border-radius: var(--radius-btn);
+    @apply bg-accent text-white
+      hover:bg-accent-hover
+      active:scale-[0.98];
+    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.18);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 6px 18px rgba(20, 184, 166, 0.24);
   }
 
   .btn-secondary {
-    @apply bg-secondary text-dark hover:opacity-80;
-    border-radius: var(--radius-btn);
+    @apply bg-surface text-text
+      border border-border
+      hover:bg-surface-soft
+      hover:border-border-dark
+      active:scale-[0.98];
+  }
+
+  .btn-dark {
+    @apply bg-primary text-white
+      hover:bg-primary-soft
+      active:scale-[0.98];
   }
 
   .btn-danger {
-    @apply bg-danger text-white hover:opacity-90;
-    border-radius: var(--radius-btn);
+    @apply bg-danger text-white
+      hover:bg-red-700
+      active:scale-[0.98];
   }
+
+  .btn-ghost {
+    @apply bg-transparent text-text-secondary
+      hover:bg-surface-soft
+      hover:text-text
+      active:scale-[0.98];
+  }
+
+  /* ---------- Cards ---------- */
 
   .card {
-    @apply rounded-card border border-border bg-surface p-5 shadow-sm;
+    @apply rounded-card
+      border border-border
+      bg-surface
+      p-5;
+    box-shadow: var(--shadow-card);
   }
 
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .card-lg {
+    @apply rounded-card-lg
+      border border-border
+      bg-surface
+      p-6;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* ---------- Inputs ---------- */
+
   .input {
-    @apply w-full border border-border px-4 py-3
-      outline-none transition
-      focus:border-primary focus:ring-2 focus:ring-primary/20;
+    @apply w-full
+      border border-border
+      bg-surface
+      px-4 py-3
+      text-text
+      outline-none
+      transition-all duration-200
+      placeholder:text-placeholder
+      focus:border-accent
+      focus:ring-4 focus:ring-accent/10;
     border-radius: var(--radius-input);
   }
+
+  .input-error {
+    @apply border-danger
+      focus:border-danger
+      focus:ring-danger/10;
+  }
+
+  /* ---------- Badges ---------- */
+
+  .badge {
+    @apply inline-flex items-center gap-1
+      px-2.5 py-1
+      text-xs font-medium
+      rounded-full;
+  }
+
+  .badge-success {
+    @apply bg-success-soft text-success;
+  }
+
+  .badge-warning {
+    @apply bg-warning-soft text-amber-700;
+  }
+
+  .badge-danger {
+    @apply bg-danger-soft text-danger;
+  }
+
+  .badge-info {
+    @apply bg-info-soft text-info;
+  }
+
+  .badge-accent {
+    @apply bg-accent-soft text-accent-hover;
+  }
+
+  /* ---------- Section ---------- */
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl lg:text-4xl
+      font-bold tracking-tight text-text;
+  }
+
+  .section-subtitle {
+    @apply mt-3 max-w-2xl
+      text-sm sm:text-base
+      leading-relaxed text-muted;
+  }
+
+  /* ---------- Divider ---------- */
+
+  .divider {
+    @apply h-px w-full bg-border;
+  }
+
+  /* ---------- Icon Button ---------- */
+
+  .icon-btn {
+    @apply inline-flex items-center justify-center
+      w-10 h-10
+      rounded-xl
+      text-text-secondary
+      transition-all duration-200
+      hover:bg-surface-soft
+      hover:text-text
+      active:scale-95;
+  }
+
+  /* ---------- Status Dot ---------- */
+
+  .status-dot {
+    @apply inline-block
+      w-2 h-2
+      rounded-full;
+  }
+
+  .status-online {
+    @apply bg-success;
+  }
+
+  .status-pending {
+    @apply bg-warning;
+  }
+
+  .status-offline {
+    @apply bg-muted;
+  }
 }
+
+/* =========================
+   UTILITIES
+   ========================= */
+
+@layer utilities {
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  /* Auth loading protection */
+  .auth-loading {
+    visibility: hidden;
+  }
+
+  .auth-ready {
+    visibility: visible;
+  }
+}
+
