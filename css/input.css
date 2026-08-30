@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+
+  --color-secondary: #f1f5f9;
+
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+  --color-warning: #f59e0b;
+
+  --color-dark: #0f172a;
+  --color-text: #334155;
+  --color-muted: #64748b;
+
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+
+  --radius-btn: 0.75rem;
+  --radius-card: 1rem;
+  --radius-input: 0.625rem;
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+      px-4 py-2.5 font-medium
+      transition duration-200
+      cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-hover;
+    border-radius: var(--radius-btn);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-dark hover:opacity-80;
+    border-radius: var(--radius-btn);
+  }
+
+  .btn-danger {
+    @apply bg-danger text-white hover:opacity-90;
+    border-radius: var(--radius-btn);
+  }
+
+  .card {
+    @apply rounded-card border border-border bg-surface p-5 shadow-sm;
+  }
+
+  .input {
+    @apply w-full border border-border px-4 py-3
+      outline-none transition
+      focus:border-primary focus:ring-2 focus:ring-primary/20;
+    border-radius: var(--radius-input);
+  }
+}

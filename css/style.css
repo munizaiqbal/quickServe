@@ -1,0 +1,31 @@
+/* Custom CSS transitions for smooth micro-interactions */
+.form-transition {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-hidden {
+  opacity: 0;
+  transform: translateX(16px);
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+}
+
+.form-visible {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+  width: 100%;
+}
+/* Optimized container utility for precise form wrapping */
+#form-container {
+  will-change: height;
+}
+.auth-loading {
+  visibility: hidden;
+}
+
+.auth-ready {
+  visibility: visible;
+}
